@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Downloader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://files.catbox.moe/vx6eh1.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <i class="fab fa-instagram"></i> Instagram Downloader
+            </div>
+            <div class="header-subtitle">Download Foto/Video Instagram</div>
+        </header>
+
+        <div class="downloader-section">
+            <div class="downloader-box">
+                <div class="input-wrapper">
+                    <input type="text" id="urlInput" placeholder="Paste Instagram URL here..." />
+                </div>
+                <button class="download-btn" id="downloadBtn" onclick="downloadInstagram()">
+                    <span><i class="fab fa-instagram"></i> Download</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div id="processing" class="processing" style="display: none;">
+                🚀 Processing your request...
+            </div>
+
+            <div id="actionButtons" class="action-buttons" style="display: none;"></div>
+            
+            <div id="results" class="results-container"></div>
+        </div>
+
+        <!-- Author Modal -->
+        <div id="authorModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeAuthorModal()">&times;</button>
+                <div class="author-profile">
+                    <div id="authorName" class="author-name"></div>
+                    <div id="authorUsername" class="author-username"></div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div id="likeCount" class="stat-number">0</div>
+                            <div class="stat-label">Likes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div id="commentCount" class="stat-number">0</div>
+                            <div class="stat-label">Comments</div>
+                        </div>
+                        <div class="stat-item">
+                            <div id="followerCount" class="stat-number">0</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div id="postCount" class="stat-number">0</div>
+                            <div class="stat-label">Posts</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Lightbox -->
+        <div id="lightboxOverlay" class="lightbox-overlay">
+            <div class="lightbox-content">
+                <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+                <img id="lightboxImage" class="lightbox-image" src="/placeholder.svg" alt="Full Size Image">
+            </div>
+        </div>
+
+        <!-- Alert Modal -->
+        <div id="alertModal" class="alert-overlay">
+            <div class="alert-content">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-title">Link Required</div>
+                <div class="alert-message">Please enter an Instagram link first to continue download process.</div>
+                <button class="alert-button" onclick="closeAlert()">Got It</button>
+            </div>
+        </div>
+
+        <footer>
+            <div style="margin-top: 0px; font-size: 1em; font-weight: 500; filter: drop-shadow(0 6px 12px rgba(102, 126, 234, 0.4));">
+                &copy; Instagram Downloader - by <a href="https://t.me/Al_Azett" class="alazet" style="text-decoration: none; color: #667eea; text-shadow: 0 0 5px #667eea; margin-left: 4px;">Al_Azett</a>
+            </div>
+            <div class="social-links">
+                <a href="https://tiktok.com/@Al_Azet" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://instagram.com/Al_Azet" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/Al_Azett" class="social-link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
